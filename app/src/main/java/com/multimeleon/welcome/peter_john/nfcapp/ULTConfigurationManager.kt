@@ -20,8 +20,8 @@ import kotlin.experimental.and
 var MIN_OUTPUT_CURRENT = 100 //mA
 var MAX_OUTPUT_CURRENT = 1500 //mA
 
-var MIN_DIM_CURRENT = 10  //mA
-var MAX_DIM_CURRENT = 263 //mA
+var MIN_DIM_CURRENT = 5  //mA
+var MAX_DIM_CURRENT = 375 //mA
 
 var MIN_DIM_CONTROL_VOLTAGE = 10 //VOLTS * 10
 var MAX_DIM_CONTROL_VOLTAGE = 30 //VOLTS * 10
