@@ -1,0 +1,69 @@
+<resources>
+    <string name="app_name">ULT Driver Configuration</string>
+    <string name="max_dim_current">Max Dim Current</string>
+    <string name="min_dim_control_voltage">Min Dim Control Voltage</string>
+    <string name="minimum_dim_current">Minimum Dim Current</string>
+    <string name="dimming_curve">Dimming Curve</string>
+    <string name="full_bright_control_voltage">Full Bright Control Voltage</string>
+    <string name="dim_to_off_control_voltage">Dim-to-Off Control Voltage</string>
+    <string name="output_current">Output Current</string>
+    <string name="minimum_dim_control_voltage">Minimum Dim Control Voltage</string>
+    <string name="linear">Linear</string>
+    <string name="soft_start">Soft Start</string>
+    <string name="logarithmic">Logarithmic</string>
+    <string name="write">WRITE</string>
+    <string name="read">READ</string>
+    <string name="reset">RESET</string>
+    <string name="select_operation_to_perform">Select Operation</string>
+    <string name="crap">Successful read from tag</string>
+    <string name="search">Search</string>
+    <string name="DriverInputVoltageLabel">Driver Input Voltage</string>
+    <string name="RatedDriverOutputCurrentLabel">Rated Driver Output Current (mA)</string>
+    <string name="RatedDriverOutputPowerLabel">Rated Driver Output Power (W)</string>
+    <string name="DimmingControlLabel">Dimming Control</string>
+    <string name="ValidValueErrorMsg">Please enter valid values</string>
+    <string name="select">Select</string>
+    <string name="advanced">Advanced</string>
+
+
+    <string-array name="output_current_option_array">
+        <item>0</item>
+        <item>50</item>
+        <item>100</item>
+        <item>150</item>
+        <item>200</item>
+        <item>250</item>
+        <item>300</item>
+        <item>350</item>
+        <item>400</item>
+        <item>450</item>
+        <item>500</item>
+        <item>550</item>
+        <item>600</item>
+        <item>650</item>
+        <item>700</item>
+        <item>750</item>
+        <item>800</item>
+        <item>850</item>
+        <item>900</item>
+        <item>950</item>
+        <item>1000</item>
+        <item>1050</item>
+    </string-array>
+
+    <string-array name="div_Entries">
+        <item>[ Select a Voltage Range... ]</item>
+        <item>120-277</item>
+        <item>347</item>
+        <item>347-480</item>
+    </string-array>
+
+    <string-array name="dc_Entries">
+        <item>[ Select a Dimming Control... ]</item>
+        <item>None</item>
+        <item>0-10V</item>
+        <item>DALI</item>
+        <item>Phase-Cut</item>
+        <item>Step-Dimming</item>
+    </string-array>
+</resources>
