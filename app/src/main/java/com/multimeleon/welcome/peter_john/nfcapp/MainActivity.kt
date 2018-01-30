@@ -141,7 +141,7 @@ class MainActivity : AppCompatActivity() {
 
         //SET SLIDER MAX VALUES. MAX VALUE IS EQUAL TO THE MAX NUMBER IN THE RANGE
         outputCurrentSlider.max = MAX_OUTPUT_CURRENT - MIN_OUTPUT_CURRENT//standardMaxCurrent - standardMinCurrent
-        minDimCurrentSlider.max = MIN_DIM_CURRENT - MAX_DIM_CURRENT//253
+        minDimCurrentSlider.max = MAX_DIM_CURRENT - MIN_DIM_CURRENT//253
         fullBrightVoltageSlider.max = MAX_FULL_BRIGHT_VOLTAGE - MIN_FULL_BRIGHT_VOLTAGE//20//90-70
         minDimVoltageSlider.max = MAX_DIM_CONTROL_VOLTAGE - MIN_DIM_CONTROL_VOLTAGE//30
         dimToOffVoltageSlider.max = MAX_DIM_TO_OFF_CONTROL_VOLTAGE - MIN_DIM_TO_OFF_CONTROL_VOLTAGE//17

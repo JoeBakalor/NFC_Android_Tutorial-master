@@ -20,8 +20,8 @@ import kotlin.experimental.and
 var MIN_OUTPUT_CURRENT = 100 //mA
 var MAX_OUTPUT_CURRENT = 1500 //mA
 
-var MIN_DIM_CURRENT = 5  //mA
-var MAX_DIM_CURRENT = 375 //mA
+var MIN_DIM_CURRENT = 10  //mA
+var MAX_DIM_CURRENT = 263 //mA
 
 var MIN_DIM_CONTROL_VOLTAGE = 10 //VOLTS * 10
 var MAX_DIM_CONTROL_VOLTAGE = 30 //VOLTS * 10
@@ -133,8 +133,8 @@ class ULTConfigurationManager()
         MDCPendingCommand[2][2] = tuningDataBytes[i]; i++
         MDCPendingCommand[2][3] = tuningDataBytes[i]; i++
 
-        val outputCurrent = (Math.round((((((((MDCPendingCommand[2][1]).toInt()).and(255)).shl(8)).or((MDCPendingCommand[2][0]).toInt() and 255)).toDouble()/65535)*1050))).toInt()
-        val minDimCurrent = (Math.round((((((((MDCPendingCommand[2][3]).toInt()).and(255)).shl(8)).or((MDCPendingCommand[2][2]).toInt() and 255)).toDouble()/65535)*1050))).toInt()
+        val outputCurrent = (Math.round((((((((MDCPendingCommand[2][1]).toInt()).and(255)).shl(8)).or((MDCPendingCommand[2][0]).toInt() and 255)).toDouble()/65535)* MAX_OUTPUT_CURRENT))).toInt()
+        val minDimCurrent = (Math.round((((((((MDCPendingCommand[2][3]).toInt()).and(255)).shl(8)).or((MDCPendingCommand[2][2]).toInt() and 255)).toDouble()/65535)* MAX_DIM_CURRENT))).toInt()
 
 
 
@@ -201,12 +201,12 @@ class ULTConfigurationManager()
     fun ULTCreateMDCProtocolPacket(): ArrayList<ByteArray>{
 
         //SET OUTPUT CURRENT IN MDC COMMAND PACKET
-        val mdcTrimBaseVal =  ((pendingConfiguration.outputCurrent.toDouble()/1050) * 65535).toShort()
+        val mdcTrimBaseVal =  ((pendingConfiguration.outputCurrent.toDouble()/ MAX_OUTPUT_CURRENT) * 65535).toShort()
         MDCPendingCommand[2][0] = mdcTrimBaseVal.and(0xff).toByte()
         MDCPendingCommand[2][1] = ((((mdcTrimBaseVal).and(0xff00.toShort())).toInt()).shr(8)).toByte()
 
         //SET DIM CURRENT
-        val mdcTrimFloor = ((pendingConfiguration.minDimCurrent.toDouble()/1050) * 65535).toShort()
+        val mdcTrimFloor = ((pendingConfiguration.minDimCurrent.toDouble()/ MAX_DIM_CURRENT) * 65535).toShort()
         MDCPendingCommand[2][2] = mdcTrimFloor.and(0xff).toByte()
         MDCPendingCommand[2][3] = ((((mdcTrimFloor).and(0xff00.toShort())).toInt()).shr(8)).toByte()
 
